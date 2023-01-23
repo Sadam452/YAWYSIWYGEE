@@ -111,6 +111,7 @@ void TypesetScene::updateSize(){
 }
 
 void TypesetScene::copyAsPng(qreal upscale){
+
     QImage image(upscale*sceneRect().size().toSize(), QImage::Format_RGB16);
     image.fill(palette().base().color());
 
@@ -133,6 +134,7 @@ QLineF TypesetScene::getCursorLine(){
 }
 
 void TypesetScene::copySelectionAsPng(qreal upscale){
+    cursor->selectAll();
     if(!cursor->hasSelection()) return;
 
     cursor->copy();
